@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         List(moviesVM.movies){ movie in
-            VStack {
+            VStack(alignment: .leading) {
                 Text(movie.title)
                 Text(moviesVM.getGenre(generos: movie.genreIDS))
                     .font(.caption)
@@ -25,6 +25,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(MoviesVM(movies: getTestMovies()))
+            .environmentObject(MoviesVM(movies: getTestMovies(),geners: getTestGenres()))
     }
 }

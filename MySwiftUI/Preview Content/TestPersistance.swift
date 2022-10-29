@@ -18,3 +18,15 @@ func getTestMovies() -> [Movie] {
         return []
     }
 }
+
+func getTestGenres() -> [Genre] {
+    guard let url = Bundle.main.url(forResource: "testGenres", withExtension: "json") else { return [] }
+    do {
+        let data = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(.JSONFormatter)
+        return try decoder.decode(Genres.self, from: data).genres
+    } catch {
+        return []
+    }
+}

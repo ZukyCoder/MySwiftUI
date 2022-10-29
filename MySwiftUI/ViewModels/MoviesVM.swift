@@ -11,10 +11,11 @@ final class MoviesVM:ObservableObject {
     let persistence = NetworkPersistence.share
     
     @Published var movies:[Movie]
-    @Published var genres:[Genre] = []
+    @Published var genres:[Genre]
     
-    init(movies:[Movie] = []){
+    init(movies:[Movie] = [], geners: [Genre] = []) {
         self.movies = movies
+        self.genres = geners
     }
     
     @MainActor func getMovies() async {

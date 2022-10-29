@@ -21,6 +21,7 @@
 		0F10328329091C770041BDDE /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10328229091C770041BDDE /* MovieCellView.swift */; };
 		0F10328529091C8D0041BDDE /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10328429091C8D0041BDDE /* MovieDetailView.swift */; };
 		0F103287290DC0E40041BDDE /* testMovies.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F103286290DC0E40041BDDE /* testMovies.json */; };
+		0F103289290DC8070041BDDE /* testGenres.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F103288290DC8070041BDDE /* testGenres.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		0F10328229091C770041BDDE /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
 		0F10328429091C8D0041BDDE /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		0F103286290DC0E40041BDDE /* testMovies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testMovies.json; sourceTree = "<group>"; };
+		0F103288290DC8070041BDDE /* testGenres.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = testGenres.json; path = "MySwiftUI/Preview Content/testGenres.json"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				0F103266290127B70041BDDE /* Preview Assets.xcassets */,
 				0F10327E290670A60041BDDE /* TestPersistance.swift */,
 				0F103286290DC0E40041BDDE /* testMovies.json */,
+				0F103288290DC8070041BDDE /* testGenres.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				0F103267290127B70041BDDE /* Preview Assets.xcassets in Resources */,
 				0F103263290127B70041BDDE /* Assets.xcassets in Resources */,
 				0F103287290DC0E40041BDDE /* testMovies.json in Resources */,
+				0F103289290DC8070041BDDE /* testGenres.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
