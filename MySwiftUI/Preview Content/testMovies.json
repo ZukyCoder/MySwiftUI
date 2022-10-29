@@ -1,0 +1,87 @@
+{
+    "dates": {
+        "maximum": "2022-11-02",
+        "minimum": "2022-09-15"
+    },
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/d6MhreFdMHONqX3iZlJGCF8UkIt.jpg",
+            "genre_ids": [
+                28,
+                878
+            ],
+            "id": 436270,
+            "original_language": "en",
+            "original_title": "Black Adam",
+            "overview": "",
+            "popularity": 3890.299,
+            "poster_path": "/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg",
+            "release_date": "2022-10-19",
+            "title": "Black Adam",
+            "video": false,
+            "vote_average": 7.1,
+            "vote_count": 555
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/aTovumsNlDjof7YVoU5nW2RHaYn.jpg",
+            "genre_ids": [
+                27,
+                53
+            ],
+            "id": 616820,
+            "original_language": "en",
+            "original_title": "Halloween Ends",
+            "overview": "",
+            "popularity": 2063.443,
+            "poster_path": "/kFMntvUmKhvw1uAHXecqqNSFXt.jpg",
+            "release_date": "2022-10-14",
+            "title": "Halloween Ends",
+            "video": false,
+            "vote_average": 6.7,
+            "vote_count": 708
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/1DBDwevWS8OhiT3wqqlW7KGPd6m.jpg",
+            "genre_ids": [
+                53
+            ],
+            "id": 985939,
+            "original_language": "en",
+            "original_title": "Fall",
+            "overview": "",
+            "popularity": 1880.45,
+            "poster_path": "/spCAxD99U1A6jsiePFoqdEcY0dG.jpg",
+            "release_date": "2022-08-11",
+            "title": "Fall",
+            "video": false,
+            "vote_average": 7.3,
+            "vote_count": 1561
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2iGUavwv86Hubv3V5Iq4qEQXDfE.jpg",
+            "genre_ids": [
+                18,
+                53,
+                27
+            ],
+            "id": 848058,
+            "original_language": "es",
+            "original_title": "Cerdita",
+            "overview": "",
+            "popularity": 1623.903,
+            "poster_path": "/1IFwMI35HbFMq1RP8FvlSqHNw5m.jpg",
+            "release_date": "2022-10-07",
+            "title": "Cerdita",
+            "video": false,
+            "vote_average": 6.9,
+            "vote_count": 125
+        }
+    ],
+    "total_pages": 5,
+    "total_results": 89
+}

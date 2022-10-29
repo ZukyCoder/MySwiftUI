@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct MySwiftUIApp: App {
+    @StateObject var vm = MoviesVM()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(vm)
+                .task(priority: .high) {
+                    await vm.getMovies()
+                }
         }
     }
 }
