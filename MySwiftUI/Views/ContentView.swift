@@ -10,12 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var moviesVM:MoviesVM
     
+    
     var body: some View {
         List(moviesVM.movies){ movie in
             VStack(alignment: .leading) {
-                Text(movie.title)
-                Text(moviesVM.getGenre(generos: movie.genreIDS))
-                    .font(.caption)
+                MovieCellView(movie: movie)
             }
         }
         

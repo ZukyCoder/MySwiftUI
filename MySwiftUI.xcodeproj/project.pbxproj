@@ -22,6 +22,7 @@
 		0F10328529091C8D0041BDDE /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10328429091C8D0041BDDE /* MovieDetailView.swift */; };
 		0F103287290DC0E40041BDDE /* testMovies.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F103286290DC0E40041BDDE /* testMovies.json */; };
 		0F103289290DC8070041BDDE /* testGenres.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F103288290DC8070041BDDE /* testGenres.json */; };
+		0F10328B290DD9960041BDDE /* CellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10328A290DD9960041BDDE /* CellVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		0F10328429091C8D0041BDDE /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		0F103286290DC0E40041BDDE /* testMovies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testMovies.json; sourceTree = "<group>"; };
 		0F103288290DC8070041BDDE /* testGenres.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = testGenres.json; path = "MySwiftUI/Preview Content/testGenres.json"; sourceTree = SOURCE_ROOT; };
+		0F10328A290DD9960041BDDE /* CellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				0F10327C2902829A0041BDDE /* MoviesVM.swift */,
+				0F10328A290DD9960041BDDE /* CellVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				0F10327029012C8F0041BDDE /* ModelDefinitions.swift in Sources */,
 				0F10327929027EFD0041BDDE /* Extensions.swift in Sources */,
+				0F10328B290DD9960041BDDE /* CellVM.swift in Sources */,
 				0F1032762902797A0041BDDE /* NetworkPersistence.swift in Sources */,
 				0F10328329091C770041BDDE /* MovieCellView.swift in Sources */,
 				0F103261290127B60041BDDE /* ContentView.swift in Sources */,

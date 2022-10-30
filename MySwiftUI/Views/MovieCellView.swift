@@ -8,13 +8,36 @@
 import SwiftUI
 
 struct MovieCellView: View {
+    @EnvironmentObject var moviesVM:MoviesVM
+    let movie: Movie
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            AsyncImage(url: NetworkPersistence.share.getImageURL(file: movie.posterPath, type: .poster)) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 300)
+                    .cornerRadius(15)
+            } placeholder: {
+                Image("notfound")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 300)
+                    .cornerRadius(15)
+            }
+            Text(movie.title)
+            Text(moviesVM.getGenre(generos: movie.genreIDS))
+                .font(.caption)
+            
+        }
+        
     }
 }
 
 struct MovieCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCellView()
+        MovieCellView(movie: .testMovie)
+            .environmentObject(MoviesVM(movies: getTestMovies(),geners: getTestGenres()))
     }
 }

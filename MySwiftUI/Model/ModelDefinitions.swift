@@ -20,8 +20,8 @@ struct Configuration: Codable {
 
 // MARK: - Images
 struct Images: Codable {
-    let baseURL: String
-    let secureBaseURL: String
+    let baseURL: URL
+    let secureBaseURL: URL
     let backdropSizes, logoSizes, posterSizes, profileSizes: [String]
     let stillSizes: [String]
 
@@ -94,6 +94,10 @@ struct Movie: Codable, Identifiable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+}
+
+extension Movie {
+    static let testMovie = Movie(adult: false, backdropPath: "/d6MhreFdMHONqX3iZlJGCF8UkIt.jpg", genreIDS: [28,878], id: 436270, originalLanguage: "en", originalTitle: "Black Adam", overview: "Black Adam spends the next 5,000 years flying back to Earth. By the time he makes it back, in 1945, Shazam has appointed three new champions to take his place: Captain Marvel, Captain Marvel Jr., and Mary Marvel.", popularity: 3890.299, posterPath: "/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg", releaseDate: "2022-10-19", title: "Black Adam", video: false, voteAverage: 7.1, voteCount: 555)
 }
 
 // MARK: - MovieDetail
