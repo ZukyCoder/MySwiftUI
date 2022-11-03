@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var moviesVM:MoviesVM
-    
+    let gridItems: [GridItem] = [GridItem(.adaptive(minimum: 150))]
     
     var body: some View {
-        List(moviesVM.movies){ movie in
-            VStack(alignment: .leading) {
-                MovieCellView(movie: movie)
+        ScrollView{
+            LazyVGrid(columns: gridItems, spacing: 25) {
+                ForEach(moviesVM.movies) {movie in
+                    MovieCellView(movie: movie)
+                }
             }
         }
-        
     }
 }
 

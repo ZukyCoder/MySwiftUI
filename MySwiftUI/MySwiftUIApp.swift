@@ -17,6 +17,7 @@ struct MySwiftUIApp: App {
                 .environmentObject(vm)
                 .task(priority: .high) {
                     await vm.getMovies()
+                    print(URL.cachesDirectory)
                 }
         }
     }

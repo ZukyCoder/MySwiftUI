@@ -67,8 +67,18 @@ final class NetworkPersistence {
     }
     
     func getPoster(file: String) async throws -> UIImage? {
-        guard let url = getImageURL(file: file, type: .poster) else { return nil }
-        return try await getImage(url: url)
+        let urlFile = URL.cachesDirectory.appending(path: file)
+        if FileManager.default.fileExists(atPath: urlFile.path()) {
+            let data = try Data(contentsOf: urlFile)
+            return UIImage(data: data)
+        } else {
+            guard let url = getImageURL(file: file, type: .poster) else { return nil }
+            let image = try await getImage(url: url)
+            if let data = image.jpegData(compressionQuality: 0.7) {
+                try data.write(to: urlFile, options: [.atomic, .completeFileProtection])
+            }
+            return image
+        }
     }
     
     func getJSON<JSONType:Codable>(url: URL, type: JSONType.Type) async throws -> JSONType {
