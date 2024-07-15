@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         ScrollView{
-            LazyVGrid(columns: gridItems, spacing: 25) {
+            LazyVGrid(columns: gridItems, spacing: 20) {
                 ForEach(moviesVM.movies) {movie in
                     MovieCellView(movie: movie)
                 }

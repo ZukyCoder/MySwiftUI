@@ -16,8 +16,8 @@ struct MovieCellView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 15, style: .continuous)
             .fill(.linearGradient(colors:[.gray.opacity(0.6), .gray.opacity(0.2)], startPoint: .top, endPoint: .bottom))
-            .frame(width: 150, height: 350)
-            .shadow(color: .black.opacity(0.4),radius: 3.0, x: 0, y: 3)
+            .frame(width: 150, height: 300)
+            .shadow(color: .primary.opacity(0.4),radius: 3.0, x: 2, y: 3)
             .overlay {
                 VStack(alignment: .leading) {
                     if let poster = cell.poster {
@@ -41,7 +41,7 @@ struct MovieCellView: View {
                     .padding(.leading, 5)
                     Spacer()
                 }
-                .frame(width: 150,height: 350)
+                .frame(width: 150,height: 300)
                 .mask {
                     RoundedRectangle(cornerRadius: 15, style: .continuous)
                 }
@@ -55,7 +55,7 @@ struct MovieCellView: View {
 struct MovieCellView_Previews: PreviewProvider {
     static var previews: some View {
         MovieCellView(movie: .testMovie)
-            .previewLayout(.fixed(width: 150, height: 350))
+            .previewLayout(.fixed(width: 150, height: 300))
             .environmentObject(MoviesVM(movies: getTestMovies(),geners: getTestGenres()))
     }
 }
