@@ -11,11 +11,22 @@ struct ContentView: View {
     @EnvironmentObject var moviesVM:MoviesVM
     let gridItems: [GridItem] = [GridItem(.adaptive(minimum: 150))]
     
+    @State var selectedMovie:Movie?
+    
     var body: some View {
-        ScrollView{
-            LazyVGrid(columns: gridItems, spacing: 20) {
-                ForEach(moviesVM.movies) {movie in
-                    MovieCellView(movie: movie)
+        ZStack {
+            if selectedMovie != nil {
+                MovieDetailView(movie: $selectedMovie)
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: gridItems, spacing: 20) {
+                        ForEach(moviesVM.movies) {movie in
+                            MovieCellView(movie: movie)
+                                .onTapGesture {
+                                    selectedMovie = movie
+                                }
+                        }
+                    }
                 }
             }
         }

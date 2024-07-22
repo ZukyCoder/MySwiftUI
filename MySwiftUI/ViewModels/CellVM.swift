@@ -11,9 +11,16 @@ import UIKit
 final class CellVM: ObservableObject {
     let persistence = NetworkPersistence.share
     
-    @Published var poster: UIImage?
+    @Published var poster: UIImage? {
+        didSet {
+            if let poster, let color =  poster.averageColor{
+                self.color = color
+            }
+        }
+    }
+    @Published var color:UIColor = .gray
     
-    func getPoster(movie: Movie) async {
+    @MainActor func getPoster(movie: Movie) async {
         do {
             poster = try await persistence.getPoster(file: movie.posterPath)
         } catch {

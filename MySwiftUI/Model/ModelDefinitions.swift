@@ -138,7 +138,7 @@ struct MovieDetail: Codable {
 }
 
 // MARK: - ProductionCompany
-struct ProductionCompany: Codable {
+struct ProductionCompany: Codable, Identifiable {
     let id: Int
     let logoPath: String?
     let name, originCountry: String
@@ -149,6 +149,13 @@ struct ProductionCompany: Codable {
         case name
         case originCountry = "origin_country"
     }
+}
+
+extension ProductionCompany {
+    static var testData = ProductionCompany(id: 12,
+                                        logoPath: "/iaYpEp3LQmb8AfAtmTvpqd4149c.png",
+                                        name: "New Line Cinema",
+                                        originCountry: "US")
 }
 
 // MARK: - SpokenLanguage
@@ -165,11 +172,11 @@ struct SpokenLanguage: Codable {
 // MARK: - MovieCredits
 struct MovieCredits: Codable {
     let id: Int
-    let cast, crew: [Cast]
+    let cast, crew: [CastCrew]
 }
 
 // MARK: - Cast
-struct Cast: Codable {
+struct CastCrew: Codable {
     let adult: Bool
     let gender, id: Int
     let knownForDepartment, name, originalName: String

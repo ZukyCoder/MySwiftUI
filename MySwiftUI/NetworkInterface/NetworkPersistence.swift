@@ -39,6 +39,14 @@ final class NetworkPersistence {
         try await getJSON(url: .getNowPlaying, type: MovieList.self).results
     }
     
+    func getMovieDetails(id: Int) async throws -> MovieDetail {
+        try await getJSON(url: .getMoviesDetails(movie: id), type: MovieDetail.self)
+    }
+    
+    func getMovieCastCrew(id: Int) async throws -> MovieCredits {
+        try await getJSON(url: .getMoviesCredits(movie: id), type: MovieCredits.self)
+    }
+    
     func getImageURL(file:String, type: ImageType) -> URL? {
         guard let configuration else { return nil }
         let baseURL = configuration.images.secureBaseURL
