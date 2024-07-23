@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		006799962C47DBDE00990A72 /* MovieDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006799952C47DBDE00990A72 /* MovieDetailsVM.swift */; };
 		006799992C4E72D800990A72 /* ProductionCompanyCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006799982C4E72D800990A72 /* ProductionCompanyCarousel.swift */; };
+		0067999B2C4FA4EE00990A72 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067999A2C4FA4EE00990A72 /* CloseButton.swift */; };
+		0067999D2C4FA61E00990A72 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067999C2C4FA61E00990A72 /* MovieDetailsView.swift */; };
 		0F10325F290127B60041BDDE /* MySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10325E290127B60041BDDE /* MySwiftUIApp.swift */; };
 		0F103261290127B60041BDDE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F103260290127B60041BDDE /* ContentView.swift */; };
 		0F103263290127B70041BDDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F103262290127B70041BDDE /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		006799952C47DBDE00990A72 /* MovieDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVM.swift; sourceTree = "<group>"; };
 		006799982C4E72D800990A72 /* ProductionCompanyCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCompanyCarousel.swift; sourceTree = "<group>"; };
+		0067999A2C4FA4EE00990A72 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		0067999C2C4FA61E00990A72 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 		0F10325B290127B60041BDDE /* MySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F10325E290127B60041BDDE /* MySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwiftUIApp.swift; sourceTree = "<group>"; };
 		0F103260290127B60041BDDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 			children = (
 				0F10328229091C770041BDDE /* MovieCellView.swift */,
 				006799982C4E72D800990A72 /* ProductionCompanyCarousel.swift */,
+				0067999A2C4FA4EE00990A72 /* CloseButton.swift */,
+				0067999C2C4FA61E00990A72 /* MovieDetailsView.swift */,
 			);
 			path = ComponentsViews;
 			sourceTree = "<group>";
@@ -231,7 +237,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0067999B2C4FA4EE00990A72 /* CloseButton.swift in Sources */,
 				0F10327029012C8F0041BDDE /* ModelDefinitions.swift in Sources */,
+				0067999D2C4FA61E00990A72 /* MovieDetailsView.swift in Sources */,
 				0F10327929027EFD0041BDDE /* Extensions.swift in Sources */,
 				0F10328B290DD9960041BDDE /* CellVM.swift in Sources */,
 				0F1032762902797A0041BDDE /* NetworkPersistence.swift in Sources */,

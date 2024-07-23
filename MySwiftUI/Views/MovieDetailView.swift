@@ -20,40 +20,13 @@ struct MovieDetailView: View {
                         .resizable()
                         .scaledToFit()
                 }
-                if let details = detailVM.details {
-                    VStack(alignment: .leading) {
-                        Text(details.title)
-                            .font(.title)
-                            .bold()
-                        
-                        Text(details.tagline)
-                            .font(.headline)
-                        
-                        Text(details.overview)
-                            .padding(.vertical, 10)
-                        
-                        Text("Presupuesto: **\(details.budget)**")
-                        if details.revenue > 0 {
-                            Text("Beneficio: **\(details.revenue)**")
-                        }
-                        Text("Duracion: \(details.runtime) min.")
-                        
-                        ProductionCompanyCarousel(productionCompanies: details.productionCompanies)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                }
+                MovieDetailsView(details: detailVM.details)
+                    .padding(.bottom, 50)
             }
             .ignoresSafeArea()
-            Button {
+            
+            CloseButton {
                 movie = nil
-            } label: {
-                Image(systemName: "xmark")
-                    .symbolVariant(.circle)
-                    .symbolVariant(.fill)
-                    .font(.largeTitle)
-                    .foregroundColor(.white.opacity(0.5))
-                    .shadow(color: .black,radius: 18)
             }
             .padding(.trailing)
         }

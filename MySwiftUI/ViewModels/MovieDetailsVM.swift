@@ -15,7 +15,7 @@ final class MovieDetailVM:ObservableObject {
     @Published var cast:[CastCrew] = []
     @Published var crew:[CastCrew] = []
     
-    func getDetails(movie: Int) async {
+    @MainActor func getDetails(movie: Int) async {
         do {
             let (detail, credits) = try await (persistance.getMovieDetails(id: movie), persistance.getMovieCastCrew(id: movie))
             self.details = detail

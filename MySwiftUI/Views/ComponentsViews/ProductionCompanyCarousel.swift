@@ -13,7 +13,7 @@ struct ProductionCompanyCarousel: View {
         VStack(alignment: .leading){
             Text("Productoras")
                 .font(.headline)
-                .padding(.top, 10)
+                .padding([.top, .bottom], 10)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 30) {
                     ForEach(productionCompanies) { company in
