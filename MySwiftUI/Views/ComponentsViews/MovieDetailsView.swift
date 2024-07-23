@@ -38,5 +38,5 @@ struct MovieDetailsView: View {
 }
 
 #Preview {
-    MovieDetailsView()
+    MovieDetailsView(details: .testDetail)
 }
