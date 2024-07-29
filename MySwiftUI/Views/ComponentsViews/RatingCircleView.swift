@@ -39,7 +39,7 @@ struct RatingCircleView: View {
                 let percent = (percent * 10).formatted(.number.precision(.fractionLength(0)))
                 HStack(alignment: .top, spacing: 0) {
                     Text("\(percent)")
-                        .font(.system(size: 65 * (size / 150), design: .rounded))
+                        .font(.system(size: 60 * (size / 150), design: .rounded))
                         .bold()
                     Text("%")
                         .font(.system(size: 18 * (size / 150)))

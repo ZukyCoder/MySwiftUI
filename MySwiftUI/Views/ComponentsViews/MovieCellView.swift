@@ -34,6 +34,9 @@ struct MovieCellView: View {
                             .scaledToFit()
                             .frame(width: 150, height: 230, alignment: .top)
                     }
+                    RatingCircleView(percent: movie.voteAverage, size: 35)
+                        .padding(.leading, 5)
+                        .offset(y: -30)
                     VStack(alignment: .leading) {
                         Text(movie.title)
                             .font(.subheadline)
@@ -42,6 +45,7 @@ struct MovieCellView: View {
                             .font(.system(size: 10))
                     }
                     .foregroundStyle(.white)
+                    .padding(.top, -30)
                     .padding(.leading, 5)
                     Spacer()
                 }
