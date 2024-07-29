@@ -238,3 +238,20 @@ struct CastCrew: Codable {
         case order, department, job
     }
 }
+
+extension CastCrew {
+    static let castCrewTestData  = CastCrew(adult: false,
+                                     gender: 2,
+                                     id: 18918,
+                                     knownForDepartment: "Acting",
+                                     name: "Dwayne Johnson",
+                                     originalName: "Dwayne Johnson",
+                                            popularity: 58.368,
+                                     profilePath: "/kuqFzlYMc2Irs0yPznMd1FroeGq.jpg",
+                                     castID: 0,
+                                     character: "Black Adam / Toth Adam",
+                                     creditID:"59e392f39251410b677000225",
+                                     order: 0,
+                                     department: "",
+                                     job: "")
+}
