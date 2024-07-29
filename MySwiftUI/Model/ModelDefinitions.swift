@@ -240,18 +240,33 @@ struct CastCrew: Codable {
 }
 
 extension CastCrew {
-    static let castCrewTestData  = CastCrew(adult: false,
+    static let theRock  = CastCrew(adult: false,
                                      gender: 2,
                                      id: 18918,
                                      knownForDepartment: "Acting",
                                      name: "Dwayne Johnson",
                                      originalName: "Dwayne Johnson",
-                                            popularity: 58.368,
+                                    popularity: 58.368,
                                      profilePath: "/kuqFzlYMc2Irs0yPznMd1FroeGq.jpg",
                                      castID: 0,
                                      character: "Black Adam / Toth Adam",
                                      creditID:"59e392f39251410b677000225",
                                      order: 0,
-                                     department: "",
-                                     job: "")
+                                     department: nil,
+                                     job: nil)
+    
+    static let director = CastCrew(adult: false,
+                                   gender: 2,
+                                   id: 59521,
+                                   knownForDepartment: "Directing",
+                                   name: "Jaume Collet-Serra",
+                                   originalName: "Jaume Collet-Serra",
+                                   popularity: 7.901,
+                                   profilePath: "/kuqFzlYMc2Irs0yPznMd1FroeGq.jpg",
+                                   castID: nil,
+                                   character: nil,
+                                   creditID:"59e392f39251410b677000225",
+                                   order: nil,
+                                   department: "Directing",
+                                   job: "director ")
 }
