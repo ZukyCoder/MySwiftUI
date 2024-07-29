@@ -27,6 +27,26 @@ final class NetworkPersistence {
         }
     }
     
+    func getConfiguration() async throws -> Configuration {
+        try await getJSON(url: .getAPIConfiguration, type: Configuration.self)
+    }
+    
+    func getGeners() async throws -> [Genre] {
+        try await getJSON(url: .getGeners, type: Genres.self).genres
+    }
+    
+    func getNowPlaying() async throws -> [Movie]{
+        try await getJSON(url: .getNowPlaying, type: MovieList.self).results
+    }
+    
+    func getMovieDetails(id: Int) async throws -> MovieDetail {
+        try await getJSON(url: .getMoviesDetails(movie: id), type: MovieDetail.self)
+    }
+    
+    func getMovieCastCrew(id: Int) async throws -> MovieCredits {
+        try await getJSON(url: .getMoviesCredits(movie: id), type: MovieCredits.self)
+    }
+    
     func getImageURL(file:String, type: ImageType) -> URL? {
         guard let configuration else { return nil }
         let baseURL = configuration.images.secureBaseURL
@@ -52,18 +72,6 @@ final class NetworkPersistence {
                 .appending(path: configuration.images.stillSizes.dropLast().last ?? "")
                 .appending(path: file)
         }
-    }
-    
-    func getConfiguration() async throws -> Configuration {
-        try await getJSON(url: .getAPIConfiguration, type: Configuration.self)
-    }
-    
-    func getGeners() async throws -> [Genre] {
-        try await getJSON(url: .getGeners, type: Genres.self).genres
-    }
-    
-    func getNowPlaying() async throws -> [Movie]{
-        try await getJSON(url: .getNowPlaying, type: MovieList.self).results
     }
     
     func getPoster(file: String) async throws -> UIImage? {

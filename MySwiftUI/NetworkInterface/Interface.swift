@@ -12,7 +12,7 @@ extension String {
 }
 
 extension URLQueryItem {
-    static let lenguage = URLQueryItem(name: "language", value: "ES")
+    static let lenguage = URLQueryItem(name: "language", value: "es-ES")
     static let region = URLQueryItem(name: "region", value: "ES")
 }
 extension URL {
