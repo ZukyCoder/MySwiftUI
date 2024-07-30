@@ -213,9 +213,10 @@ struct MovieCredits: Codable {
 }
 
 // MARK: - Cast
-struct CastCrew: Codable {
+struct CastCrew: Codable ,Identifiable {
+    let id = UUID()
     let adult: Bool
-    let gender, id: Int
+    let gender, realID: Int
     let knownForDepartment, name, originalName: String
     let popularity: Double
     let profilePath: String?
@@ -226,7 +227,8 @@ struct CastCrew: Codable {
     let department, job: String?
 
     enum CodingKeys: String, CodingKey {
-        case adult, gender, id
+        case adult, gender
+        case realID = "id"
         case knownForDepartment = "known_for_department"
         case name
         case originalName = "original_name"
@@ -241,23 +243,23 @@ struct CastCrew: Codable {
 
 extension CastCrew {
     static let theRock  = CastCrew(adult: false,
-                                     gender: 2,
-                                     id: 18918,
-                                     knownForDepartment: "Acting",
-                                     name: "Dwayne Johnson",
-                                     originalName: "Dwayne Johnson",
-                                    popularity: 58.368,
-                                     profilePath: "/kuqFzlYMc2Irs0yPznMd1FroeGq.jpg",
-                                     castID: 0,
-                                     character: "Black Adam / Toth Adam",
-                                     creditID:"59e392f39251410b677000225",
-                                     order: 0,
-                                     department: nil,
-                                     job: nil)
+                                   gender: 2,
+                                   realID: 18918,
+                                   knownForDepartment: "Acting",
+                                   name: "Dwayne Johnson",
+                                   originalName: "Dwayne Johnson",
+                                   popularity: 58.368,
+                                   profilePath: "/kuqFzlYMc2Irs0yPznMd1FroeGq.jpg",
+                                   castID: 0,
+                                   character: "Black Adam / Toth Adam",
+                                   creditID:"59e392f39251410b677000225",
+                                   order: 0,
+                                   department: nil,
+                                   job: nil)
     
     static let director = CastCrew(adult: false,
                                    gender: 2,
-                                   id: 59521,
+                                   realID: 59521,
                                    knownForDepartment: "Directing",
                                    name: "Jaume Collet-Serra",
                                    originalName: "Jaume Collet-Serra",

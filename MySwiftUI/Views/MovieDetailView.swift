@@ -20,8 +20,25 @@ struct MovieDetailView: View {
                         .resizable()
                         .scaledToFit()
                 }
-                MovieDetailsView(details: detailVM.details)
-                    .padding(.bottom, 50)
+                VStack(alignment: .leading) {
+                    MovieDetailsView(details: detailVM.details)
+                        .padding(.bottom)
+                    Text("Movie Cast")
+                        .font(.headline)
+                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                        .padding(.leading)
+                    CastCrewCarouselView(castCrewDetail: detailVM.cast)
+                        .padding(.bottom)
+                    Text("Movie Crew")
+                        .font(.headline)
+                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                        .padding(.leading)
+                    CastCrewCarouselView(castCrewDetail: detailVM.crew)
+                }
+            }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear
+                    .frame(height: UIDevice.bottomInsetSize)
             }
             .ignoresSafeArea()
             
