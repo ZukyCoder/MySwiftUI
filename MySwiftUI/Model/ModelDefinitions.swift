@@ -96,8 +96,22 @@ struct Movie: Codable, Identifiable {
     }
 }
 
+// MARK: - Test Data
 extension Movie {
-    static let testMovie = Movie(adult: false, backdropPath: "/d6MhreFdMHONqX3iZlJGCF8UkIt.jpg", genreIDS: [28,878], id: 436270, originalLanguage: "en", originalTitle: "Black Adam", overview: "Black Adam spends the next 5,000 years flying back to Earth. By the time he makes it back, in 1945, Shazam has appointed three new champions to take his place: Captain Marvel, Captain Marvel Jr., and Mary Marvel.", popularity: 3890.299, posterPath: "/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg", releaseDate: "2022-10-19", title: "Black Adam", video: false, voteAverage: 7.1, voteCount: 555)
+    static let testMovie = Movie(adult: false, 
+                                 backdropPath: "/d6MhreFdMHONqX3iZlJGCF8UkIt.jpg",
+                                 genreIDS: [28,878],
+                                 id: 436270,
+                                 originalLanguage: "en",
+                                 originalTitle: "Black Adam",
+                                 overview: "Black Adam spends the next 5,000 years flying back to Earth. By the time he makes it back, in 1945, Shazam has appointed three new champions to take his place: Captain Marvel, Captain Marvel Jr., and Mary Marvel.",
+                                 popularity: 3890.299,
+                                 posterPath: "/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg",
+                                 releaseDate: "2022-10-19",
+                                 title: "Black Adam",
+                                 video: false,
+                                 voteAverage: 7.1,
+                                 voteCount: 555)
 }
 
 // MARK: - MovieDetail
@@ -136,8 +150,32 @@ struct MovieDetail: Codable {
     }
 }
 
+extension MovieDetail {
+    static var testDetail = MovieDetail(adult: false,
+                                        backdropPath: "/d6MhreFdMHONqX3iZlJGCF8UkIt.jpg",
+                                        budget: 140000000,
+                                        homepage: "",
+                                        id: 436270,
+                                        imdbID: "tt6443346",
+                                        originalLanguage: "en",
+                                        originalTitle: "Black Adam",
+                                        overview: "Black Adam spends the next 5,000 years flying back to Earth. By the time he makes it back, in 1945, Shazam has appointed three new champions to take his place: Captain Marvel, Captain Marvel Jr., and Mary Marvel.",
+                                        popularity: 4.5,
+                                        posterPath: "/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg",
+                                        productionCompanies: [.testData],
+                                        revenue: 250000000,
+                                        runtime: 210,
+                                        spokenLanguages: [],
+                                        status: "Release",
+                                        tagline: "The black FURY ",
+                                        title: "Black Adam",
+                                        video: true,
+                                        voteAverage: 4.0,
+                                        voteCount: 555)
+}
+
 // MARK: - ProductionCompany
-struct ProductionCompany: Codable {
+struct ProductionCompany: Codable, Identifiable {
     let id: Int
     let logoPath: String?
     let name, originCountry: String
@@ -148,6 +186,13 @@ struct ProductionCompany: Codable {
         case name
         case originCountry = "origin_country"
     }
+}
+
+extension ProductionCompany {
+    static var testData = ProductionCompany(id: 12,
+                                        logoPath: "/iaYpEp3LQmb8AfAtmTvpqd4149c.png",
+                                        name: "New Line Cinema",
+                                        originCountry: "US")
 }
 
 // MARK: - SpokenLanguage
@@ -164,11 +209,11 @@ struct SpokenLanguage: Codable {
 // MARK: - MovieCredits
 struct MovieCredits: Codable {
     let id: Int
-    let cast, crew: [Cast]
+    let cast, crew: [CastCrew]
 }
 
 // MARK: - Cast
-struct Cast: Codable {
+struct CastCrew: Codable {
     let adult: Bool
     let gender, id: Int
     let knownForDepartment, name, originalName: String
