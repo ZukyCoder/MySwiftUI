@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductionCompanyCarousel: View {
     var productionCompanies:[ProductionCompany]
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("Productoras")
