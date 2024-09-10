@@ -20,6 +20,13 @@ struct MovieDetailView: View {
                         .resizable()
                         .scaledToFit()
                 }
+                RatingCircleView(percent: movie?.voteAverage ?? 0.0, size: 75)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading)
+                    .offset(y: -50)
+                MovieDetailsView(details: detailVM.details)
+                    .padding(.top, -50)
+                    .padding(.bottom, 50)
                 VStack(alignment: .leading) {
                     MovieDetailsView(details: detailVM.details)
                         .padding(.bottom)
