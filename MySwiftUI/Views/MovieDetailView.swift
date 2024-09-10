@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MovieDetailView: View {
+    @Binding var showBack:Bool
     @ObservedObject var detailVM = MovieDetailVM()
     
     @Binding var movie:Movie?
+    let nameSpace: Namespace.ID
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -27,6 +29,7 @@ struct MovieDetailView: View {
                 MovieDetailsView(details: detailVM.details)
                     .padding(.top, -50)
                     .padding(.bottom, 50)
+                .matchedGeometryEffect(id: "cover", in: nameSpace)
                 VStack(alignment: .leading) {
                     MovieDetailsView(details: detailVM.details)
                         .padding(.bottom)
@@ -51,6 +54,7 @@ struct MovieDetailView: View {
             
             CloseButton {
                 movie = nil
+                showBack.toggle()
             }
             .padding(.trailing)
         }
@@ -66,6 +70,6 @@ struct MovieDetailView: View {
 
 struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movie: .constant(.testMovie))
+        MovieDetailView(showBack: .constant(true), movie: .constant(.testMovie), nameSpace: Namespace().wrappedValue)
     }
 }

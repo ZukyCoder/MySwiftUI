@@ -9,27 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var moviesVM:MoviesVM
-    let gridItems: [GridItem] = [GridItem(.adaptive(minimum: 150))]
     
     @State var selectedMovie:Movie?
+    @State var showBack = false
+    @Namespace var nameSpace
+    
+    let gridItems: [GridItem] = [GridItem(.adaptive(minimum: 150))]
     
     var body: some View {
         ZStack {
-            if selectedMovie != nil {
-                MovieDetailView(movie: $selectedMovie)
+            if showBack {
+                MovieDetailView(showBack: $showBack, movie: $selectedMovie, nameSpace: nameSpace)
             } else {
-                ScrollView {
-                    LazyVGrid(columns: gridItems, spacing: 20) {
-                        ForEach(moviesVM.movies) {movie in
-                            MovieCellView(movie: movie)
-                                .onTapGesture {
-                                    selectedMovie = movie
-                                }
-                        }
-                    }
-                }
+                MovieCollectionView(showBack: $showBack, selectedMovie: $selectedMovie, nameSpace: nameSpace)
             }
         }
+        .animation(.spring(), value: showBack)
     }
 }
 
