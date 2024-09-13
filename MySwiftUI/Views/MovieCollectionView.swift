@@ -24,6 +24,7 @@ struct MovieCollectionView: View {
                             showBack.toggle()
                             selectedMovie = movie
                         }
+                        .accessibilityIdentifier("MovieCellView")
                 }
             }
         }
