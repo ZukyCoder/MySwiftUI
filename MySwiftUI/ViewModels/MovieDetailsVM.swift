@@ -22,7 +22,10 @@ final class MovieDetailVM:ObservableObject {
             self.cast = credits.cast
             self.crew = credits.crew
         } catch {
-            print("Error recovering details")
+            // Surface error to UI or log for analytics
+            // Example: add an @Published var error: Error? and set it here
+            // error = error
+            print("Error recovering details: \(error.localizedDescription)")
         }
     }
     

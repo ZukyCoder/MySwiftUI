@@ -19,7 +19,7 @@ struct MovieCollectionView: View {
         ScrollView {
             LazyVGrid(columns: gridItems, spacing: 20) {
                 ForEach(movieCellVM.movies) {movie in
-                    MovieCellView(movie: movie)
+                    MovieCellView(movie: movie, nameSpace: nameSpace)
                         .onTapGesture {
                             showBack.toggle()
                             selectedMovie = movie
@@ -33,5 +33,5 @@ struct MovieCollectionView: View {
 
 #Preview {
     MovieCollectionView(showBack: .constant(true), selectedMovie: .constant(.testMovie), nameSpace: Namespace().wrappedValue )
-        .environmentObject(MoviesVM(movies: getTestMovies(),geners: getTestGenres()))
+        .environmentObject(MoviesVM(movies: getTestMovies(),genres: getTestGenres()))
 }

@@ -13,18 +13,21 @@ final class MoviesVM:ObservableObject {
     @Published var movies:[Movie]
     @Published var genres:[Genre]
     
-    init(movies:[Movie] = [], geners: [Genre] = []) {
+    init(movies:[Movie] = [], genres: [Genre] = []) {
         self.movies = movies
-        self.genres = geners
+        self.genres = genres
     }
     
     @MainActor func getMovies() async {
         do {
-            async let genresTask = persistence.getGeners()
+            async let genresTask = persistence.getGenres()
             async let moviesTask = persistence.getNowPlaying()
             (genres, movies) = try await (genresTask, moviesTask)
         } catch {
-            print("Error \(error)")
+            // Surface error to UI or log for analytics
+            // Example: add an @Published var error: Error? and set it here
+            // error = error
+            print("Error fetching movies: \(error.localizedDescription)")
         }
     }
     

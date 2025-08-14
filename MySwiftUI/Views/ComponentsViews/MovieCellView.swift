@@ -12,6 +12,7 @@ struct MovieCellView: View {
     @StateObject var cell = CellVM()
     
     let movie: Movie
+    let nameSpace: Namespace.ID
     
     var body: some View {
         RoundedRectangle(cornerRadius: 15, style: .continuous)
@@ -28,6 +29,7 @@ struct MovieCellView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 150, height: 230, alignment: .top)
+                            .matchedGeometryEffect(id: "cover", in: nameSpace)
                     } else {
                         Image("notfound")
                             .resizable()
@@ -62,9 +64,9 @@ struct MovieCellView: View {
 
 struct MovieCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCellView(movie: .testMovie)
+        MovieCellView(movie: .testMovie, nameSpace: Namespace().wrappedValue)
             .previewLayout(.fixed(width: 150, height: 350))
-            .environmentObject(MoviesVM(movies: getTestMovies(),geners: getTestGenres()))
+            .environmentObject(MoviesVM(movies: getTestMovies(),genres: getTestGenres()))
     }
 }
 

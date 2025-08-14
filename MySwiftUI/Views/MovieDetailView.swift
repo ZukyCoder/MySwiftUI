@@ -29,7 +29,6 @@ struct MovieDetailView: View {
                 MovieDetailsView(details: detailVM.details)
                     .padding(.top, -50)
                     .padding(.bottom, 50)
-                .matchedGeometryEffect(id: "cover", in: nameSpace)
                 VStack(alignment: .leading) {
                     MovieDetailsView(details: detailVM.details)
                         .padding(.bottom)

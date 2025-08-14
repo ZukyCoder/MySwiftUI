@@ -24,13 +24,13 @@ struct ContentView: View {
                 MovieCollectionView(showBack: $showBack, selectedMovie: $selectedMovie, nameSpace: nameSpace)
             }
         }
-        .animation(.spring(), value: showBack)
+        .animation(.easeInOut, value: showBack)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(MoviesVM(movies: getTestMovies(),geners: getTestGenres()))
+            .environmentObject(MoviesVM(movies: getTestMovies(),genres: getTestGenres()))
     }
 }

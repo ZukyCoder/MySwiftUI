@@ -31,8 +31,8 @@ final class NetworkPersistence {
         try await getJSON(url: .getAPIConfiguration, type: Configuration.self)
     }
     
-    func getGeners() async throws -> [Genre] {
-        try await getJSON(url: .getGeners, type: Genres.self).genres
+    func getGenres() async throws -> [Genre] {
+        try await getJSON(url: .getGenres, type: Genres.self).genres
     }
     
     func getNowPlaying() async throws -> [Movie]{
