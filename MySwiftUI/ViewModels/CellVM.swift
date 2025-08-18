@@ -24,7 +24,10 @@ final class CellVM: ObservableObject {
         do {
             poster = try await persistence.getPoster(file: movie.posterPath)
         } catch {
-            print("Error loading Image \(error.localizedDescription)")
+            // Surface error to UI or log for analytics
+            // Example: add an @Published var error: Error? and set it here
+            // error = error
+            print("Error loading image: \(error.localizedDescription)")
         }
     }
 }

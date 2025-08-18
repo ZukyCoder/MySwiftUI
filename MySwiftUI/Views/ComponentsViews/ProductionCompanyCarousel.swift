@@ -14,9 +14,9 @@ struct ProductionCompanyCarousel: View {
         VStack(alignment: .leading){
             Text("Productoras")
                 .font(.headline)
-                .padding([.top, .bottom], 10)
+                .padding([.top, .bottom], Constants.Layout.padding10)
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 30) {
+                HStack(spacing: Constants.Layout.spacing30) {
                     ForEach(productionCompanies) { company in
                         VStack{
                             if let logoPath = company.logoPath {

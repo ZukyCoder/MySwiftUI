@@ -18,7 +18,7 @@ extension URLQueryItem {
 extension URL {
     static let baseURL = URL(string: "https://api.themoviedb.org/3")!
     static let getAPIConfiguration = baseURL.appending(path: "configuration")
-    static let getGeners = baseURL.appending(path: "genre/movie/list").appending(queryItems: [.lenguage])
+    static let getGenres = baseURL.appending(path: "genre/movie/list").appending(queryItems: [.lenguage])
     static let getNowPlaying = baseURL.appending(path: "movie/now_playing").appending(queryItems: [.lenguage,.region])
     
     static func getMoviesDetails(movie: Int) -> URL {

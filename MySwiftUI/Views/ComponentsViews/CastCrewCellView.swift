@@ -64,7 +64,6 @@ struct CastCrewCellView: View {
     Group {
         CastCrewCellView(castCrew: .theRock)
         CastCrewCellView(castCrew: .director)
-            .previewDevice("iPhone 12 mini")
     }
     
 }
