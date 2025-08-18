@@ -25,10 +25,10 @@ struct MovieDetailView: View {
                 RatingCircleView(percent: movie?.voteAverage ?? 0.0, size: 75)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading)
-                    .offset(y: -50)
+                    .offset(y: -Constants.Layout.offset50)
                 MovieDetailsView(details: detailVM.details)
-                    .padding(.top, -50)
-                    .padding(.bottom, 50)
+                    .padding(.top, -Constants.Layout.padding50)
+                    .padding(.bottom, Constants.Layout.padding50)
                 VStack(alignment: .leading) {
                     MovieDetailsView(details: detailVM.details)
                         .padding(.bottom)

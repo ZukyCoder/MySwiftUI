@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0061C5BF2C930464005E7F27 /* MySwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0061C5BE2C930464005E7F27 /* MySwiftUITests.swift */; };
+		0007E8532E531A0F0076745A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007E8522E5319FD0076745A /* Constants.swift */; };
 		006799962C47DBDE00990A72 /* MovieDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006799952C47DBDE00990A72 /* MovieDetailsVM.swift */; };
 		006799992C4E72D800990A72 /* ProductionCompanyCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006799982C4E72D800990A72 /* ProductionCompanyCarousel.swift */; };
 		0067999B2C4FA4EE00990A72 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067999A2C4FA4EE00990A72 /* CloseButton.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		0061C5BC2C930464005E7F27 /* MySwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0061C5BE2C930464005E7F27 /* MySwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwiftUITests.swift; sourceTree = "<group>"; };
+		0007E8522E5319FD0076745A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		006799952C47DBDE00990A72 /* MovieDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVM.swift; sourceTree = "<group>"; };
 		006799982C4E72D800990A72 /* ProductionCompanyCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCompanyCarousel.swift; sourceTree = "<group>"; };
 		0067999A2C4FA4EE00990A72 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		0F10327729027EDE0041BDDE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0007E8522E5319FD0076745A /* Constants.swift */,
 				0F10327829027EFD0041BDDE /* Extensions.swift */,
 				0F10327A2902818D0041BDDE /* Errors.swift */,
 			);
@@ -355,6 +358,7 @@
 				0F10327F290670A60041BDDE /* TestPersistance.swift in Sources */,
 				0F10327B2902818D0041BDDE /* Errors.swift in Sources */,
 				0094B5E02C53988800FC4C97 /* RatingCircleView.swift in Sources */,
+				0007E8532E531A0F0076745A /* Constants.swift in Sources */,
 				0F10327D2902829A0041BDDE /* MoviesVM.swift in Sources */,
 				0F10328529091C8D0041BDDE /* MovieDetailView.swift in Sources */,
 				0094B5E52C58F1EE00FC4C97 /* CastCrewCarouselView.swift in Sources */,

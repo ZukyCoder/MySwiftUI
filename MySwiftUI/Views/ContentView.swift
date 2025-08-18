@@ -9,12 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var moviesVM:MoviesVM
+    let gridItems: [GridItem] = [GridItem(.adaptive(minimum: Constants.Layout.minimumWidth150))]
     
     @State var selectedMovie:Movie?
     @State var showBack = false
     @Namespace var nameSpace
-    
-    let gridItems: [GridItem] = [GridItem(.adaptive(minimum: 150))]
     
     var body: some View {
         ZStack {

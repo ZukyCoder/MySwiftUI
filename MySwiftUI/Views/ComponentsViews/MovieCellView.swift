@@ -15,13 +15,14 @@ struct MovieCellView: View {
     let nameSpace: Namespace.ID
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 15, style: .continuous)
-            .fill(.linearGradient(colors:[Color(cell.color).opacity(0.9),
-                                          Color(cell.color).opacity(0.4)],
+        RoundedRectangle(cornerRadius: Constants.Layout.cornerRadius15, style: .continuous)
+            .fill(.linearGradient(colors:[Color(cell.color).opacity(Constants.ColorOpacities.opacity9),
+                                          Color(cell.color).opacity(Constants.ColorOpacities.opacity4)],
                                   startPoint: .top,
                                   endPoint: .bottom))
             .frame(width: 150, height: 350)
-            .shadow(color: .primary.opacity(0.4),radius: 5.0, x: 0, y: 5)
+            .frame(minWidth: Constants.Layout.minimumWidth150, minHeight: Constants.Layout.minimumHeight350)
+            .shadow(color: .primary.opacity(Constants.ColorOpacities.opacity4),radius: 5.0, x: 0, y: 5)
             .overlay {
                 VStack(alignment: .leading) {
                     if let poster = cell.poster {
