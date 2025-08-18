@@ -17,8 +17,8 @@ struct CloseButton: View {
                 .symbolVariant(.circle)
                 .symbolVariant(.fill)
                 .font(.largeTitle)
-                .foregroundColor(Color(.lightGray).opacity(0.4))
-                .shadow(color: .black,radius: 18)
+                .foregroundColor(Color(.lightGray).opacity(Constants.ColorOpacities.opacity5))
+                .shadow(color: .black,radius: Constants.Layout.cornerRadius18)
         }
     }
 }

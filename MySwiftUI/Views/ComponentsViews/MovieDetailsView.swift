@@ -21,7 +21,7 @@ struct MovieDetailsView: View {
                     .font(.headline)
                 
                 Text(details.overview)
-                    .padding(.vertical, 10)
+                    .padding(.vertical, Constants.Layout.padding10)
                 
                 Text("Presupuesto: **\(details.budget)**")
                 if details.revenue > 0 {
