@@ -12,12 +12,12 @@ struct MovieCollectionView: View {
     @Binding var selectedMovie:Movie?
     @EnvironmentObject var movieCellVM:MoviesVM
     
-    let gridItems: [GridItem] = [GridItem(.adaptive(minimum: 150))]
+    let gridItems: [GridItem] = [GridItem(.adaptive(minimum: Constants.Layout.minimumWidth150))]
     let nameSpace: Namespace.ID
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridItems, spacing: 20) {
+            LazyVGrid(columns: gridItems, spacing: Constants.Layout.spacing20) {
                 ForEach(movieCellVM.movies) {movie in
                     MovieCellView(movie: movie, nameSpace: nameSpace)
                         .onTapGesture {
@@ -28,6 +28,7 @@ struct MovieCollectionView: View {
                 }
             }
         }
+        .padding(.horizontal, Constants.Layout.standardPadding)
     }
 }
 
