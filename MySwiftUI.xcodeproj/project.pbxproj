@@ -232,10 +232,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F10326A290127B70041BDDE /* Build configuration list for PBXNativeTarget "MySwiftUI" */;
 			buildPhases = (
+				00EBD73B2E532F8000B8662C /* SwiftLint */,
 				0F103257290127B60041BDDE /* Sources */,
 				0F103258290127B60041BDDE /* Frameworks */,
 				0F103259290127B60041BDDE /* Resources */,
-				00EBD73B2E532F8000B8662C /* SwiftLint */,
 			);
 			buildRules = (
 			);
