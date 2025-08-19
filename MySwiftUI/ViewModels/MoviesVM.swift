@@ -8,23 +8,31 @@
 import SwiftUI
 
 final class MoviesVM:ObservableObject {
-    let persistence = NetworkPersistence.share
+    var persistence: NetworkPersistenceProtocol
     
+    @Published var error: Error?
     @Published var movies:[Movie]
     @Published var genres:[Genre]
     
-    init(movies:[Movie] = [], geners: [Genre] = []) {
+    init(
+        movies:[Movie] = [],
+        genres: [Genre] = [],
+        persistence: NetworkPersistenceProtocol = NetworkPersistence.share
+    ) {
         self.movies = movies
-        self.genres = geners
+        self.genres = genres
+        self.persistence = persistence
     }
     
     @MainActor func getMovies() async {
         do {
-            async let genresTask = persistence.getGeners()
+            async let genresTask = persistence.getGenres()
             async let moviesTask = persistence.getNowPlaying()
             (genres, movies) = try await (genresTask, moviesTask)
+            error = nil
         } catch {
-            print("Error \(error)")
+            self.error = error
+            print("Error fetching movies: \(error.localizedDescription)")
         }
     }
     

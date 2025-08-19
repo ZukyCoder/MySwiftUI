@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MovieDetailView: View {
+    @Binding var showBack:Bool
     @ObservedObject var detailVM = MovieDetailVM()
     
     @Binding var movie:Movie?
+    let nameSpace: Namespace.ID
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -23,10 +25,10 @@ struct MovieDetailView: View {
                 RatingCircleView(percent: movie?.voteAverage ?? 0.0, size: 75)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading)
-                    .offset(y: -50)
+                    .offset(y: -Constants.Layout.offset50)
                 MovieDetailsView(details: detailVM.details)
-                    .padding(.top, -50)
-                    .padding(.bottom, 50)
+                    .padding(.top, -Constants.Layout.padding50)
+                    .padding(.bottom, Constants.Layout.padding50)
                 VStack(alignment: .leading) {
                     MovieDetailsView(details: detailVM.details)
                         .padding(.bottom)
@@ -51,6 +53,7 @@ struct MovieDetailView: View {
             
             CloseButton {
                 movie = nil
+                showBack.toggle()
             }
             .padding(.trailing)
         }
@@ -66,6 +69,6 @@ struct MovieDetailView: View {
 
 struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movie: .constant(.testMovie))
+        MovieDetailView(showBack: .constant(true), movie: .constant(.testMovie), nameSpace: Namespace().wrappedValue)
     }
 }

@@ -12,31 +12,33 @@ struct MovieCellView: View {
     @StateObject var cell = CellVM()
     
     let movie: Movie
+    let nameSpace: Namespace.ID
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 15, style: .continuous)
-            .fill(.linearGradient(colors:[Color(cell.color).opacity(0.9),
-                                          Color(cell.color).opacity(0.4)],
+        RoundedRectangle(cornerRadius: Constants.Layout.cornerRadius15, style: .continuous)
+            .fill(.linearGradient(colors:[Color(cell.color).opacity(Constants.ColorOpacities.opacity9),
+                                          Color(cell.color).opacity(Constants.ColorOpacities.opacity4)],
                                   startPoint: .top,
                                   endPoint: .bottom))
-            .frame(width: 150, height: 350)
-            .shadow(color: .primary.opacity(0.4),radius: 5.0, x: 0, y: 5)
+        
+            .frame(minWidth: Constants.Layout.minimumWidth150, minHeight: Constants.Layout.minimumHeight350)
+            .shadow(color: .primary.opacity(Constants.ColorOpacities.opacity4),radius: 5.0, x: 0, y: 5)
             .overlay {
                 VStack(alignment: .leading) {
-                    if let poster = cell.poster {
-                        Image(uiImage: poster)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 150, height: 230, alignment: .top)
-                    } else {
-                        Image("notfound")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 150, height: 230, alignment: .top)
+                    AsyncImage(url: NetworkPersistence.share.getImageURL(file: movie.posterPath, type: .poster)) { image in
+                    image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(minWidth: Constants.Layout.minimumWidth150, minHeight: Constants.Layout.minimumHeight200, alignment: .top)
+                    } placeholder: {
+                    Image("notfound")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(minWidth: Constants.Layout.minimumWidth150, minHeight: Constants.Layout.minimumHeight200, alignment: .top)
                     }
                     RatingCircleView(percent: movie.voteAverage, size: 35)
-                        .padding(.leading, 5)
-                        .offset(y: -30)
+                        .padding(.leading, Constants.Layout.padding5)
+                        .offset(y: -Constants.Layout.offset30)
                     VStack(alignment: .leading) {
                         Text(movie.title)
                             .font(.subheadline)
@@ -45,13 +47,13 @@ struct MovieCellView: View {
                             .font(.system(size: 10))
                     }
                     .foregroundStyle(.white)
-                    .padding(.top, -30)
-                    .padding(.leading, 5)
+                    .padding(.top, -Constants.Layout.offset30)
+                    .padding(.leading, Constants.Layout.padding5)
                     Spacer()
                 }
-                .frame(width: 150,height: 350)
+                .frame(minWidth: Constants.Layout.minimumWidth150, minHeight: Constants.Layout.minimumHeight350)
                 .mask {
-                    RoundedRectangle(cornerRadius: 15, style: .continuous)
+                    RoundedRectangle(cornerRadius: Constants.Layout.cornerRadius15, style: .continuous)
                 }
                 .task {
                     await cell.getPoster(movie: movie)
@@ -62,22 +64,22 @@ struct MovieCellView: View {
 
 struct MovieCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCellView(movie: .testMovie)
-            .previewLayout(.fixed(width: 150, height: 350))
-            .environmentObject(MoviesVM(movies: getTestMovies(),geners: getTestGenres()))
+        MovieCellView(movie: .testMovie, nameSpace: Namespace().wrappedValue)
+            .previewLayout(.fixed(width: Constants.Layout.minimumWidth150, height: Constants.Layout.minimumHeight350))
+            .environmentObject(MoviesVM(movies: getTestMovies(),genres: getTestGenres()))
     }
 }
 
 /*
-AsyncImage(url: NetworkPersistence.share.getImageURL(file: movie.posterPath, type: .poster)) { image in
-    image
-        .resizable()
-        .scaledToFit()
-        .frame(width: 150, height: 230, alignment: .top)
-} placeholder: {
-    Image("notfound")
-        .resizable()
-        .scaledToFit()
-        .frame(width: 150, height: 230, alignment: .top)
-}
-*/
+ AsyncImage(url: NetworkPersistence.share.getImageURL(file: movie.posterPath, type: .poster)) { image in
+ image
+ .resizable()
+ .scaledToFit()
+ .frame(width: 150, height: 230, alignment: .top)
+ } placeholder: {
+ Image("notfound")
+ .resizable()
+ .scaledToFit()
+ .frame(width: 150, height: 230, alignment: .top)
+ }
+ */
