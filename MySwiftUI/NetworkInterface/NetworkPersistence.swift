@@ -8,11 +8,24 @@
 import Foundation
 import UIKit
 
-final class NetworkPersistence {
-    enum ImageType{
-        case backDrop, logo, poster, profile, still
-    }
-    
+// MARK: - Protocols
+protocol NetworkPersistenceProtocol {
+    func getConfiguration() async throws -> Configuration
+    func getGenres() async throws -> [Genre]
+    func getNowPlaying() async throws -> [Movie]
+    func getMovieDetails(id: Int) async throws -> MovieDetail
+    func getMovieCastCrew(id: Int) async throws -> MovieCredits
+    func getPoster(file: String) async throws -> UIImage?
+    func getImageURL(file: String, type: ImageType) -> URL?
+}
+
+// MARK: - Image Type Enum
+enum ImageType {
+    case backDrop, logo, poster, profile, still
+}
+
+// MARK: - Network Persistence Implementation
+final class NetworkPersistence: NetworkPersistenceProtocol {
     static let share = NetworkPersistence()
     
     var configuration:Configuration?
