@@ -40,7 +40,7 @@ class MockFailingPersistence: NetworkPersistenceProtocol {
 
 class MockSuccessPersistence: NetworkPersistenceProtocol {
     func getConfiguration() async throws -> Configuration {
-        var image = Images(
+        let image = Images(
             baseURL: URL(string: "") ?? URL(fileURLWithPath: ""),
             secureBaseURL: URL(string: "https://image.tmdb.org/t/p/")!,
             backdropSizes: ["w300"],

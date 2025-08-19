@@ -1,24 +1,20 @@
 //
-//  Extensions.swift
+//  Image+Extension.swift
 //  MySwiftUI
 //
-//  Created by Mario Heberthardt on 21/10/2022.
+//  Created by Mario Andres Heberthardt Marchant on 19/8/25.
 //
 
-import Foundation
-import SwiftUI
-import CoreImage
-import CoreImage.CIFilterBuiltins
+import UIKit
 
-extension DateFormatter {
-    static let JSONFormatter:DateFormatter = {
-        var format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd"
-        return format
-    }()
-}
-
+/// Extension for UIImage that provides additional functionality
 extension UIImage {
+    /// Calculates the average color of the entire image
+    ///
+    /// This property uses Core Image filters to determine the average color across all pixels in the image.
+    /// It's useful for generating color schemes or creating visual effects based on the dominant color.
+    ///
+    /// - Returns: A UIColor representing the average color of the image, or nil if calculation fails
     var averageColor:UIColor? {
         guard let inputImage = CIImage(image: self) else { return nil }
         let areaAverage = CIFilter.areaAverage()
@@ -37,29 +33,5 @@ extension UIImage {
                        green: CGFloat(bitmap[1] / 255),
                        blue: CGFloat(bitmap[2] / 255),
                        alpha: CGFloat(bitmap[3] / 255))
-    }
-}
-
-extension UIDevice {
-    static var topInsetSize:CGFloat {
-        UIApplication
-            .shared
-            .connectedScenes
-            .compactMap { $0 as? UIWindowScene}
-            .flatMap { $0.windows}
-            .first { $0.isKeyWindow}?
-            .safeAreaInsets.top ?? 0
-            
-    }
-    
-    static var bottomInsetSize:CGFloat {
-        UIApplication
-            .shared
-            .connectedScenes
-            .compactMap { $0 as? UIWindowScene}
-            .flatMap { $0.windows}
-            .first { $0.isKeyWindow}?
-            .safeAreaInsets.bottom ?? 0
-            
     }
 }
