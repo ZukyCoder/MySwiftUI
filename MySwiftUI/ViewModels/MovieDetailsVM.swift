@@ -8,12 +8,27 @@
 import SwiftUI
 
 final class MovieDetailVM:ObservableObject {
-    let persistance = NetworkPersistence.share
+    let persistance: NetworkPersistenceProtocol
     
     @Published var poster = Image("notfound")
     @Published var details:MovieDetail?
-    @Published var cast:[CastCrew] = []
-    @Published var crew:[CastCrew] = []
+    @Published var cast:[CastCrew]
+    @Published var crew:[CastCrew]
+    
+    init(
+        poster: Image = Image("notfound"),
+        details: MovieDetail? = nil,
+        cast: [CastCrew] = [],
+        crew: [CastCrew] = [],
+        persistance: NetworkPersistenceProtocol = NetworkPersistence.share
+    ) {
+        self.poster = poster
+        self.details = details
+        self.cast = cast
+        self.crew = crew
+        self.persistance = persistance
+    }
+    
     
     @MainActor func getDetails(movie: Int) async {
         do {
